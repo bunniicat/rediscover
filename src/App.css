@@ -1,0 +1,141 @@
+/* fonts */
+
+@font-face {
+  font-family: 'gilroy-bold';
+  src: local('Gilroy-Bold'), url(./fonts/Gilroy-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'gilroy-md';
+  src: local('Gilroy-Medium'), url(./fonts/Gilroy-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'wilkysta';
+  src: local('wilkysta'), url(./fonts/wilkysta.ttf) format('ttf');
+}
+
+/*defaults*/
+
+body {
+  font-family: gilroy-md;
+  background-color: var(--beige);
+  color: var(--black);
+}
+
+h1 {
+  font-family: 'wilkysta';
+}
+
+/*variables*/
+/* TO USE: var(--name) */
+
+:root {
+  --black: #101010;
+  --white: #f8f8f8;
+  --olive: #42564e;
+  --neon: #edfd5e;
+  --green: #cce0a2;
+  --beige: #cebea6;
+}
+
+/*button */
+.btn {
+  padding: 1.5rem 3rem;
+  background-color: var(--black);
+  border-radius: 2rem;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-family: 'gilroy-bold';
+  font-size: 1.6rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--neon);
+  color: var(--black);
+}
+
+/*navigation */
+.navigation_icon {
+  font-size: 3rem;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 2rem;
+  padding: 0.5rem 0.8rem 0.2rem 0.8rem;
+  position: absolute;
+  z-index: 2;
+  right: 2rem;
+  top: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.navigation_icon:hover {
+  cursor: pointer;
+  background-color: var(--neon);
+  color: var(--black);
+}
+
+.fullscreen_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right bottom, #cce0a2, #42564e);
+  z-index: 1;
+  transition: all 1s ease-in-out;
+}
+
+.fullscreen_nav_items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 2.5;
+  text-transform: uppercase;
+}
+
+.fullscreen_nav_items li {
+  border-bottom: 3px solid transparent;
+}
+
+.fullscreen_nav_items li:hover {
+  border-bottom: 3px solid var(--neon);
+  transition: all 0.4s ease-in-out;
+}
+
+/*header */
+
+.header {
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, #cce0a2cb, #42564e98), url(./assets/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.header_logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 3rem;
+  color: var(--neon);
+}
+
+.heading_box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+}
