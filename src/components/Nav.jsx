@@ -1,16 +1,29 @@
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { VscChromeClose } from 'react-icons/vsc';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
-
-  const navAnimationOpen = 'fullscreen_nav animate__animated  animate__fadeInTopRight';
+  const [navClasses, setNavClasses] = useState('.hide');
 
   const toggleNav = () => {
     navOpen ? setNavOpen(false) : setNavOpen(true);
   };
+
+  function hideNav() {
+    setNavClasses('hide');
+  }
+
+  function showNav(node) {
+    setNavClasses('block');
+    node.style.opacity = 0;
+  }
+
+  function removeOpacity(node) {
+    node.style.opacity = 1;
+  }
 
   return (
     <div className='navigation'>
@@ -20,8 +33,17 @@ const Nav = () => {
         </span>
       </label>
 
-      {navOpen && (
-        <div className={navAnimationOpen}>
+      <CSSTransition
+        in={navOpen}
+        timeout={700}
+        classNames={{ enterActive: 'animate__fadeInTopRight', exitActive: 'animate__fadeOutTopRight' }}
+        unmountOnExit
+        onEnter={showNav}
+        onEntered={removeOpacity}
+        onExited={hideNav}
+        className={`animate__animated fullscreen_nav ${navClasses}`}
+      >
+        <div>
           <div className='fullscreen_nav_items'>
             <ul>
               <li>
@@ -47,7 +69,7 @@ const Nav = () => {
             </ul>
           </div>
         </div>
-      )}
+      </CSSTransition>
     </div>
   );
 };
