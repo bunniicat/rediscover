@@ -14,10 +14,12 @@ const Nav = () => {
 
   function hideNav() {
     setNavClasses('hide');
+    document.body.style.overflow = 'visible';
   }
 
   function showNav(node) {
     setNavClasses('block');
+    document.body.style.overflow = 'hidden';
     node.style.opacity = 0;
   }
 

@@ -31,12 +31,39 @@ h1 {
 /* TO USE: var(--name) */
 
 :root {
+  /*colors*/
   --black: #101010;
   --white: #f8f8f8;
   --olive: #42564e;
   --neon: #edfd5e;
   --green: #cce0a2;
+  --d-green: #45886d;
   --beige: #cebea6;
+
+  /*breakpoints*/
+  --sm-screen: 576px;
+  --md-screen: 768px;
+  --lg-screen: 1024px;
+}
+
+/*typography*/
+.heading_2 {
+  font-size: 3rem;
+  font-family: 'gilroy-bold';
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, var(--olive), var(--d-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heading_3 {
+  font-size: 2rem;
+  font-family: 'gilroy-bold';
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 }
 
 /*button */
@@ -70,6 +97,11 @@ h1 {
   right: 2rem;
   top: 2rem;
   transition: all 0.4s ease-in-out;
+  position: fixed;
+}
+
+.body_scroll_lock {
+  position: fixed;
 }
 
 .navigation_icon:hover {
@@ -141,4 +173,44 @@ h1 {
   transform: translate(-50%, -50%);
   text-align: center;
   text-transform: uppercase;
+}
+
+/*landing info*/
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoImage {
+  text-align: center;
+}
+
+.infoImage img {
+  max-width: 500px;
+  border-radius: 1rem;
+  border-right: 2rem solid var(--d-green);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .infoSection {
+    text-align: center;
+  }
+  .infoContent {
+    flex-direction: column;
+  }
+  .infoText {
+    padding-right: 0rem !important;
+    text-align: center;
+  }
+  .infoImage {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .infoImage img {
+    max-width: 400px;
+  }
 }
