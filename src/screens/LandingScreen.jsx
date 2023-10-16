@@ -1,7 +1,11 @@
-import { FaLeaf } from 'react-icons/fa';
+import { FaLeaf, FaPlaneDeparture } from 'react-icons/fa';
+import { RiServiceFill } from 'react-icons/ri';
+import { AiFillStar } from 'react-icons/ai';
+import { BiSupport } from 'react-icons/bi';
 import Button from '../components/Button';
 import imageInfo from '../assets/image1.jpg';
 import Heading from '../components/Heading';
+import InfoCard from '../components/InfoCard';
 
 const LandingScreen = () => {
   return (
@@ -17,8 +21,8 @@ const LandingScreen = () => {
         </div>
       </header>
 
-      <main>
-        <div className='infoSection p__5'>
+      <main className='row pr__2 pl__2 pt__2'>
+        <div className='infoSection'>
           <div className='infoHeader'>
             <Heading type={'h2'} text={'Adventures designed to make you fall in love with nature'} />
           </div>
@@ -40,6 +44,26 @@ const LandingScreen = () => {
             </div>
             <div className='infoImage flex align__c justify__c'>
               <img src={imageInfo} alt='boat tour' />
+            </div>
+          </div>
+        </div>
+
+        <div className='infoCardContainer mt__8'>
+          <div className='row'>
+            <div className='col-1-of-4'>
+              <InfoCard title={'Travel with ease'} icon={<RiServiceFill />} />
+            </div>
+
+            <div className='col-1-of-4'>
+              <InfoCard title={'Personalised for you'} icon={<FaPlaneDeparture />} />
+            </div>
+
+            <div className='col-1-of-4'>
+              <InfoCard title={'Loyalty program'} icon={<AiFillStar />} />
+            </div>
+
+            <div className='col-1-of-4'>
+              <InfoCard title={'24/7 support'} icon={<BiSupport />} />
             </div>
           </div>
         </div>
