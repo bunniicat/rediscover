@@ -19,12 +19,26 @@
 
 body {
   font-family: gilroy-md;
-  background-color: var(--beige);
+  background-color: var(--white);
   color: var(--black);
 }
 
 h1 {
   font-family: 'wilkysta';
+}
+
+.link {
+  text-decoration: none;
+  color: var(--black);
+  background-color: transparent;
+  padding: 1rem 2rem;
+  font-family: 'gilroy-bold';
+  transition: all 0.4s ease-in-out;
+}
+
+.link:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 /*variables*/
@@ -34,12 +48,12 @@ h1 {
   /*colors*/
   --black: #101010;
   --white: #f8f8f8;
-  --olive: #42564e;
-  --l-olive: #418f6ea6;
-  --neon: #edfd5e;
-  --green: #cce0a2;
-  --d-green: #45886d;
-  --beige: #cebea6;
+  --gray: rgb(82, 82, 82);
+  --moonstone: #779fa1;
+  --jet: #41393e;
+  --puce: #bd8b9c;
+  --sunset: #efc88b;
+  --vanilla: #f4e3b2;
 
   /*breakpoints*/
   --sm-screen: 576px;
@@ -59,7 +73,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   display: inline-block;
-  background-image: linear-gradient(to right bottom, var(--olive), var(--d-green));
+  background-image: linear-gradient(to right bottom, var(--moonstone), var(--sunset));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -70,6 +84,27 @@ h1 {
   font-family: 'gilroy-bold';
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, var(--moonstone), var(--sunset));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heading_4 {
+  font-size: 2rem;
+  font-family: 'gilroy-bold';
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--white);
+}
+
+.heading_5 {
+  font-size: 2rem;
+  font-family: 'gilroy-bold';
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--black);
 }
 
 /*button */
@@ -87,8 +122,22 @@ h1 {
 
 .btn:hover {
   cursor: pointer;
-  background-color: var(--neon);
+  background-color: var(--moonstone);
   color: var(--black);
+}
+
+.border_gradiant {
+  background: linear-gradient(#f8f8f8, #f8f8f8) padding-box, linear-gradient(to right, #779fa1, #efc88b) border-box;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+}
+
+/*content margins*/
+.featuredEventsContent,
+.infoSection,
+.infoCards,
+.reviewsSectionContent {
+  margin: 0 4rem;
 }
 
 /*navigation */
@@ -112,7 +161,7 @@ h1 {
 
 .navigation_icon:hover {
   cursor: pointer;
-  background-color: var(--neon);
+  background-color: var(--moonstone);
   color: var(--black);
 }
 
@@ -122,7 +171,7 @@ h1 {
   left: 0;
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to right bottom, #cce0a2, #42564e);
+  background: linear-gradient(to right bottom, #efc98b, #779fa1);
   z-index: 1;
 }
 
@@ -155,7 +204,7 @@ h1 {
 
 .header {
   height: 90vh;
-  background-image: linear-gradient(to right bottom, #cce0a2cb, #42564e98), url(./assets/banner.jpg);
+  background-image: linear-gradient(to right bottom, #efc98bb0, #779fa186), url(./assets/potterybanner.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -169,7 +218,7 @@ h1 {
   top: 2rem;
   left: 2rem;
   font-size: 3rem;
-  color: var(--neon);
+  color: var(--moonstone);
 }
 
 .heading_box {
@@ -181,64 +230,146 @@ h1 {
   text-transform: uppercase;
 }
 
-/*landing info*/
+/*main*/
 
 .infoSection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.infoImage {
+.infoSection p {
   text-align: center;
+  max-width: 60rem;
 }
 
-.infoImage img {
-  max-width: 500px;
-  border-radius: 1rem;
-  border-right: 2rem solid var(--d-green);
-  box-shadow: var(--shadow);
-}
-
-@media (max-width: 1024px) {
-  .infoSection {
-    text-align: center;
-  }
-  .infoContent {
-    flex-direction: column;
-  }
-  .infoText {
-    padding-right: 0rem !important;
-    text-align: center;
-  }
-  .infoImage {
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-  .infoImage img {
-    max-width: 400px;
-  }
-}
-
-.infoCardContainer {
-  width: 100%;
+.infoCards {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
 }
 
 .infoCard {
-  border-radius: 1rem;
-  background-color: rgba(145, 172, 145, 0.774);
-  box-shadow: var(--shadow);
-  border: 2px solid var(--d-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transition: transform 0.3s;
-
-  &:hover {
-    transform: translateY(-1.5rem);
-  }
 }
 
 .infoCard_icon {
   font-size: 4rem;
-  margin-bottom: 0.5rem;
+  color: var(--moonstone);
+}
+
+.infoCard p {
+  max-width: 300px;
+}
+
+@media (max-width: 1078px) {
+  .infoCards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .infoCard {
+    max-width: 320px;
+  }
+}
+
+/*featured*/
+
+.featuredEvents {
+  background-color: var(--sunset);
+  clip-path: polygon(0 9%, 100% 0, 100% 76%, 0 87%);
+  padding-top: 20rem;
+  padding-bottom: 40rem;
+}
+
+.featuredEventsCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--br-1);
+  min-width: 320px;
+}
+
+.featuredCard_img {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 0.5rem;
+}
+
+.featuredCard_dateLocation {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray);
+  margin: 0.5rem 0;
+}
+
+.featuredCard_organizer,
+.reviewInfo {
+  color: rgb(143, 143, 143);
+  text-transform: uppercase;
+  font-family: 'gilroy-bold';
+  margin-top: 2rem;
+}
+
+.icon_span {
+  margin-right: 0.3rem;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 1078px) {
+  .featuredEventsCards {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+  .featuredEvents {
+    padding-bottom: 60rem;
+    padding-top: 30rem;
+  }
+  .featuredCard {
+    max-width: 320px;
+  }
+
+  .featuredCard_img {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
+/*reviews*/
+
+.reviewsSectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviewsSectionContent h2 {
+  text-align: center;
+}
+
+.reviewInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.review {
+  border-bottom: 1px solid var(--moonstone);
+  padding: 0 3rem;
+}
+
+.reviewRating {
+  margin-bottom: 2rem;
 }
