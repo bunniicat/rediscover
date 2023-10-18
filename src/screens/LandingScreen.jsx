@@ -1,4 +1,4 @@
-import { GiFlowerPot, GiArchiveRegister } from 'react-icons/gi';
+import { GiArchiveRegister } from 'react-icons/gi';
 import { FaMapSigns } from 'react-icons/fa';
 import { HiTicket } from 'react-icons/hi';
 import Button from '../components/Button';
