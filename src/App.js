@@ -7,10 +7,12 @@ import './App.css';
 import AboutScreen from './screens/AboutScreen';
 import EventScreen from './screens/EventScreen';
 import EventSpecificScreen from './screens/EventSpecificScreen';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Nav />
       <main>
         <Routes>

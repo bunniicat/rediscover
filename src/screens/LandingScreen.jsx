@@ -6,6 +6,7 @@ import InfoCard from '../components/InfoCard';
 import { eventsData } from '../data/eventsData';
 import FeaturedCard from '../components/FeaturedCard';
 import Review from '../components/Review';
+import { Link } from 'react-router-dom';
 
 const LandingScreen = () => {
   return (
@@ -14,7 +15,9 @@ const LandingScreen = () => {
         <div className='heading_box'>
           <h1>Co-mmunity Events</h1>
           <h2>Browse and register for events in your local community</h2>
-          <Button text={'Get Started'} customClasses={'mt__4'} />
+          <Link to='/events'>
+            <Button text={'View Events'} customClasses={'mt__4'} />
+          </Link>
         </div>
       </header>
 
@@ -54,7 +57,9 @@ const LandingScreen = () => {
               })}
             </div>
             <div className='featured_btn'>
-              <Button text={'View All Events'} customClasses={'mt__4'} />
+              <Link to='/events'>
+                <Button text={'View All Events'} customClasses={'mt__4'} />
+              </Link>
             </div>
           </div>
         </div>
