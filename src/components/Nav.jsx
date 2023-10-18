@@ -10,7 +10,6 @@ const links = [
   { linkName: 'Home', path: '/' },
   { linkName: 'About us', path: '/about' },
   { linkName: 'All events', path: '/events' },
-  { linkName: 'Contact us', path: '/contact' },
 ];
 
 const NavLink = ({ path, children, toggle }) => (

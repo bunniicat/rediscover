@@ -50,15 +50,7 @@ h1 {
   --white: #f8f8f8;
   --gray: rgb(82, 82, 82);
   --moonstone: #779fa1;
-  --jet: #41393e;
-  --puce: #bd8b9c;
   --sunset: #efc88b;
-  --vanilla: #f4e3b2;
-
-  /*breakpoints*/
-  --sm-screen: 576px;
-  --md-screen: 768px;
-  --lg-screen: 1024px;
 
   /*design details*/
   --br-1: 1rem;
