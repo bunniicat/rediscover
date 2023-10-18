@@ -6,6 +6,7 @@ import InfoCard from '../components/InfoCard';
 import { eventsData } from '../data/eventsData';
 import FeaturedCard from '../components/FeaturedCard';
 import Review from '../components/Review';
+import Footer from '../components/Footer';
 
 const LandingScreen = () => {
   return (
@@ -22,7 +23,7 @@ const LandingScreen = () => {
         </div>
       </header>
 
-      <main className='mainContainer'>
+      <div className='mainContainer'>
         <div className='infoSection mt__5'>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -48,7 +49,7 @@ const LandingScreen = () => {
         <div className='featuredEvents mt__5'>
           <div className='featuredEventsContent'>
             <h2 className='heading_4'>Featured Events</h2>
-            <div className='featuredEventsCards mt__3'>
+            <div className='featuredEventsCards mt__4'>
               {eventsData.map((event) => {
                 if (event.featured) {
                   return <FeaturedCard event={event} />;
@@ -56,6 +57,9 @@ const LandingScreen = () => {
                   return null;
                 }
               })}
+            </div>
+            <div className='featured_btn'>
+              <Button text={'View All Events'} customClasses={'mt__4'} />
             </div>
           </div>
         </div>
@@ -92,7 +96,8 @@ const LandingScreen = () => {
             />
           </div>
         </div>
-      </main>
+      </div>
+      <Footer />
     </>
   );
 };
