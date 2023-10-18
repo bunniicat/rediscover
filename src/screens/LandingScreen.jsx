@@ -6,16 +6,11 @@ import InfoCard from '../components/InfoCard';
 import { eventsData } from '../data/eventsData';
 import FeaturedCard from '../components/FeaturedCard';
 import Review from '../components/Review';
-import Footer from '../components/Footer';
 
 const LandingScreen = () => {
   return (
     <>
       <header className='header'>
-        <div className='header_logo'>
-          <GiFlowerPot />
-        </div>
-
         <div className='heading_box'>
           <h1>Co-mmunity Events</h1>
           <h2>Browse and register for events in your local community</h2>
@@ -24,7 +19,7 @@ const LandingScreen = () => {
       </header>
 
       <div className='mainContainer'>
-        <div className='infoSection mt__5'>
+        <div className='infoSection mt__5 pb__5 pt__2'>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -40,7 +35,7 @@ const LandingScreen = () => {
           </p>
         </div>
 
-        <div className='infoCards mt__5'>
+        <div className='infoCards'>
           <InfoCard title={'Find Events'} icon={<FaMapSigns />} />
           <InfoCard title={'Register'} icon={<GiArchiveRegister />} />
           <InfoCard title={'Event Tickets'} icon={<HiTicket />} />
@@ -52,7 +47,7 @@ const LandingScreen = () => {
             <div className='featuredEventsCards mt__4'>
               {eventsData.map((event) => {
                 if (event.featured) {
-                  return <FeaturedCard event={event} />;
+                  return <FeaturedCard event={event} key={event._id} />;
                 } else {
                   return null;
                 }
@@ -97,7 +92,6 @@ const LandingScreen = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

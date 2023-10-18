@@ -1,8 +1,25 @@
 import { HiMenuAlt3 } from 'react-icons/hi';
+import { GiFlowerPot } from 'react-icons/gi';
 import { VscChromeClose } from 'react-icons/vsc';
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { Link } from 'react-router-dom';
 import 'animate.css';
+
+const links = [
+  { linkName: 'Home', path: '/' },
+  { linkName: 'About us', path: '/about' },
+  { linkName: 'All events', path: '/events' },
+  { linkName: 'Contact us', path: '/contact' },
+];
+
+const NavLink = ({ path, children, toggle }) => (
+  <li>
+    <Link to={path} className='navigation_link' onClick={toggle}>
+      {children}
+    </Link>
+  </li>
+);
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -29,12 +46,18 @@ const Nav = () => {
 
   return (
     <div className='navigation'>
-      <label htmlFor='navi-toggle' className='navigation_button'>
-        <span className='navigation_icon' onClick={toggleNav}>
-          {navOpen ? <VscChromeClose /> : <HiMenuAlt3 />}
-        </span>
-      </label>
-
+      <div className='navBar'>
+        <div className='navBar_logo'>
+          <Link to='/'>
+            <GiFlowerPot />
+          </Link>
+        </div>
+        <label htmlFor='navi-toggle' className='navigation_button'>
+          <span className='navigation_icon' onClick={toggleNav}>
+            {navOpen ? <VscChromeClose /> : <HiMenuAlt3 />}
+          </span>
+        </label>
+      </div>
       <CSSTransition
         in={navOpen}
         timeout={700}
@@ -48,26 +71,11 @@ const Nav = () => {
         <div>
           <div className='fullscreen_nav_items'>
             <ul>
-              <li>
-                <a href='#' className='navigation_link'>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href='#' className='navigation_link'>
-                  About us
-                </a>
-              </li>
-              <li>
-                <a href='#' className='navigation_link'>
-                  Our tours
-                </a>
-              </li>
-              <li>
-                <a href='#' className='navigation_link'>
-                  Contact us
-                </a>
-              </li>
+              {links.map((link) => (
+                <NavLink key={link.linkName} path={link.path} toggle={toggleNav}>
+                  {link.linkName}
+                </NavLink>
+              ))}
             </ul>
           </div>
         </div>

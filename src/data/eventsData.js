@@ -66,7 +66,7 @@ export const eventsData = [
   {
     _id: 5,
     title: 'Dog getogether',
-    description: 'Bring your four legged friend and meet other dog owners',
+    description: 'Meet other dog owners',
     length: 2,
     date: '2023-07-03',
     image: '/images/event5.jpg',

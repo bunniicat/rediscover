@@ -155,6 +155,15 @@ h1 {
   position: fixed;
 }
 
+.navBar_logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 3rem;
+  color: var(--moonstone);
+  z-index: 1;
+}
+
 .body_scroll_lock {
   position: fixed;
 }
@@ -211,14 +220,6 @@ h1 {
 
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-.header_logo {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  font-size: 3rem;
-  color: var(--moonstone);
 }
 
 .heading_box {
@@ -395,10 +396,173 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20rem;
+  bottom: 0;
 }
 
 .social_icons {
   font-size: 2.4rem;
   display: flex;
   gap: 0.5rem;
+}
+
+/*-------------------------------------------------*/
+/*about page */
+
+.aboutContainer {
+  max-width: 100%;
+}
+
+.aboutText {
+  background-color: var(--sunset);
+  color: var(--white);
+  padding: 5rem 4rem;
+  border-radius: 0 0 0rem 20rem;
+}
+
+.aboutText p,
+.aboutText h1 {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.aboutText h1 {
+  margin-bottom: 2rem;
+}
+
+.aboutHeading {
+  font-size: 3rem;
+  font-family: 'gilroy-bold';
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--white);
+}
+
+.teamCardImage img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.teamCard {
+  padding: 2rem 4rem;
+  margin: 3rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 400px;
+  min-width: 400px;
+}
+
+.teamCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutTeam h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+/*all events page*/
+
+.eventsContent {
+  margin: 8rem 5rem;
+}
+
+.eventsContent h2 {
+  margin-bottom: 3rem;
+}
+
+.allEventsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+}
+
+.featuredCard {
+  max-width: 400px;
+}
+
+.eventPageDecorTop {
+  background-color: var(--sunset);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  z-index: -1;
+}
+
+.eventPageDecorBottom {
+  background-color: var(--sunset);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -80%;
+  left: -10%;
+  z-index: -1;
+}
+
+/*event specific page*/
+
+.eventContainer {
+  margin: 8rem 5rem;
+  display: flex;
+  gap: 5rem;
+  border-bottom: 1px solid var(--moonstone);
+  border-top: 1px solid var(--moonstone);
+  padding: 5rem 0;
+}
+
+.eventContainer img {
+  width: 500px;
+  height: 500px;
+  border-radius: var(--br-1);
+}
+
+.eventInfo {
+  flex-grow: 1;
+}
+
+.event_dateLocation {
+  display: flex;
+  color: var(--gray);
+  margin: 0.5rem 0;
+  gap: 2rem;
+}
+
+.eventBy {
+  color: rgb(143, 143, 143);
+  text-transform: uppercase;
+  font-family: 'gilroy-bold';
+  margin-top: 0.2rem;
+}
+
+.eventDescription,
+.aboutOrganizer p {
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.event_btns {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 1078px) {
+  .eventContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .eventContainer img {
+    width: 400px;
+    height: 400px;
+  }
 }

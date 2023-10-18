@@ -1,4 +1,5 @@
 import { IoLocationSharp, IoToday } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const FeaturedCard = ({ event }) => {
   return (
@@ -23,7 +24,9 @@ const FeaturedCard = ({ event }) => {
         </div>
         <p className='featuredCard_description'>{event.description}</p>
         <p className='featuredCard_organizer'>by {event.organizer}</p>
-        <button className='link border_gradiant mt__3'>Event Info</button>
+        <Link to={`/event/${event._id}`}>
+          <button className='link border_gradiant mt__4'>View Event</button>
+        </Link>
       </div>
     </div>
   );
